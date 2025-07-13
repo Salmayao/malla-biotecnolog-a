@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Malla Biotecnología - Interactiva</title>
+  <style>
+    body { font-family: sans-serif; margin: 2em; background: #f4f4f4; }
+    h1 { text-align: center; color: #2c3e50; }
+    .malla { display: flex; flex-wrap: wrap; justify-content: center; gap: 1em; }
+    .materia {
+      background: white; padding: 1em; border-radius: 8px;
+      border: 1px solid #ccc; width: 200px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
+    .materia:hover { background: #e0f7fa; }
+  </style>
+</head>
+<body>
+  <h1>Malla Interactiva - Biotecnología</h1>
+  <div class="malla" id="malla"></div>
+
+  <script>
+    const materias = [
+      { nombre: "Biología General", semestre: 1, creditos: 5 },
+      { nombre: "Química General", semestre: 1, creditos: 5 },
+      { nombre: "Matemática Básica", semestre: 1, creditos: 4 },
+      { nombre: "Bioquímica", semestre: 2, creditos: 5 },
+      { nombre: "Microbiología", semestre: 2, creditos: 5 },
+      { nombre: "Biotecnología Vegetal", semestre: 3, creditos: 4 },
+      { nombre: "Ingeniería Genética", semestre: 3, creditos: 4 },
+      { nombre: "Fermentación Industrial", semestre: 4, creditos: 4 },
+      { nombre: "Prácticas Preprofesionales", semestre: 5, creditos: 10 }
+    ];
+
+    const contenedor = document.getElementById("malla");
+
+    materias.forEach(m => {
+      const div = document.createElement("div");
+      div.className = "materia";
+      div.innerHTML = `<strong>${m.nombre}</strong><br>Semestre: ${m.semestre}<br>Créditos: ${m.creditos}`;
+      contenedor.appendChild(div);
+    });
+  </script>
+</body>
+</html>
